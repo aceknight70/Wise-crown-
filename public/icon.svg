@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0278A"/>
+      <stop offset="100%" stop-color="#C70C63"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFE27A"/>
+      <stop offset="100%" stop-color="#F0A800"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- Background Squircle -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)"/>
+
+  <!-- Golden Crown at Top -->
+  <g transform="translate(156, 75) scale(0.66)" filter="url(#shadow)">
+    <path d="M24 134 L24 56 L87 98 L150 30 L213 98 L276 56 L276 134 Z" fill="url(#goldGrad)" stroke="#B0740A" stroke-width="4" stroke-linejoin="round"/>
+    <circle cx="24" cy="50" r="10" fill="#E6197F"/>
+    <circle cx="150" cy="23" r="12" fill="#E6197F"/>
+    <circle cx="276" cy="50" r="10" fill="#E6197F"/>
+    <rect x="20" y="130" width="260" height="26" rx="8" fill="#B0740A"/>
+    <!-- Crown gems -->
+    <circle cx="48" cy="143" r="7" fill="#E6197F"/>
+    <circle cx="99" cy="143" r="7" fill="#7B3FA0"/>
+    <circle cx="150" cy="143" r="7" fill="#129C7F"/>
+    <circle cx="201" cy="143" r="7" fill="#EE7F12"/>
+    <circle cx="252" cy="143" r="7" fill="#D9A400"/>
+  </g>
+
+  <!-- White Heart Base -->
+  <g transform="translate(76, 175) scale(7.5)" filter="url(#shadow)">
+    <path d="M24 43S5 31 5 17.5A10.5 10.5 0 0124 11a10.5 10.5 0 0119 6.5C43 31 24 43 24 43z" fill="#FFFFFF"/>
+    <text x="24" y="30" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-weight="700" font-size="13" fill="#D6106F">OW</text>
+  </g>
+</svg>

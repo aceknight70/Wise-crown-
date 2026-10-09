@@ -1,0 +1,6 @@
+{
+  "name": "WISE Crown",
+  "description": "Production-quality mobile-first PWA for girls aged 9-16, empowering education, safety, and health for OLAMII WISE Solutions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

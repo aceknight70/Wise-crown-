@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Nunito", "Segoe UI", -apple-system, sans-serif;
+}
+
+:root {
+  --bg: #FFF5F9;
+  --surface: #FFFFFF;
+  --surface-hover: #FFF0F6;
+  --soft: #FFE6F1;
+  --fg: #2B1230;
+  --muted: #6A5063;
+  --line: #F3D2E2;
+  --brand: #0B2A6B;
+  --on-brand: #FFFFFF;
+  --accent: #E6197F;
+  --accent-deep: #D6106F;
+  --on-accent: #FFFFFF;
+  --gold: #F5C518;
+  --hdr-a: #F0278A;
+  --hdr-b: #C70C63;
+  --mint: #E3F9F3;
+  --mint-fg: #0B7A62;
+  --teal: #2FC7AB;
+  --crown-hi: #FFE27A;
+  --crown: #F0A800;
+  --crown-band: #B0740A;
+  --gem-off: #FBEBC8;
+  --crown-tip: #E6197F;
+  --on-teal: #062050;
+  --c-edu: #E6197F;
+  --c-eq: #7B3FA0;
+  --c-safe: #129C7F;
+  --c-opp: #EE7F12;
+  --c-tom: #D9A400;
+  --ok: #1F8A4C;
+  --on-ok: #FFFFFF;
+  --warn: #B4540A;
+  --std-a: #0A2A6B;
+  --std-b: #001A55;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #1A0D1F;
+  --surface: #28142E;
+  --surface-hover: #34193C;
+  --soft: #3D1C42;
+  --fg: #FBEFF5;
+  --muted: #D1B5C6;
+  --line: #4E2C52;
+  --brand: #2B4FB8;
+  --on-brand: #FFFFFF;
+  --accent: #FF5AAB;
+  --accent-deep: #E6197F;
+  --on-accent: #1F0716;
+  --gold: #F5C518;
+  --hdr-a: #C2105F;
+  --hdr-b: #8F0B48;
+  --mint: #123B33;
+  --mint-fg: #5BE3C5;
+  --teal: #2FC7AB;
+  --crown-hi: #FFD95A;
+  --crown: #E39B00;
+  --crown-band: #8F5A06;
+  --gem-off: #4D3A1A;
+  --crown-tip: #FF6AB1;
+  --c-edu: #FF6AB1;
+  --c-eq: #C08AE6;
+  --c-safe: #3FD6B4;
+  --c-opp: #FFA24D;
+  --c-tom: #F5C518;
+  --ok: #46C783;
+  --on-ok: #0B2A18;
+  --warn: #F0A15A;
+  --std-a: #091F4D;
+  --std-b: #001238;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Accessible focus outline */
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Crown animations */
+@keyframes crownShimmer {
+  0% { filter: drop-shadow(0 4px 12px rgba(245, 197, 24, 0.25)); }
+  50% { filter: drop-shadow(0 6px 20px rgba(245, 197, 24, 0.55)); }
+  100% { filter: drop-shadow(0 4px 12px rgba(245, 197, 24, 0.25)); }
+}
+
+@keyframes jewelPulse {
+  0% { transform: scale(1); opacity: 0.95; }
+  50% { transform: scale(1.1); opacity: 1; filter: drop-shadow(0 0 8px currentColor); }
+  100% { transform: scale(1); opacity: 0.95; }
+}
+
+@keyframes sparkleSpin {
+  0% { transform: rotate(0deg) scale(0.7); opacity: 0.4; }
+  50% { transform: rotate(180deg) scale(1.2); opacity: 1; }
+  100% { transform: rotate(360deg) scale(0.7); opacity: 0.4; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .crown-shimmer {
+    animation: crownShimmer 3.5s ease-in-out infinite;
+  }
+  .gem-active {
+    animation: jewelPulse 2.2s ease-in-out infinite;
+    transform-origin: center;
+  }
+  .sparkle-anim {
+    animation: sparkleSpin 4s linear infinite;
+    transform-origin: center;
+  }
+}
+
+/* 3D Flip Card support */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
